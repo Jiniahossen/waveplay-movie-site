@@ -10,11 +10,15 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
 import { useEffect } from "react";
 import { initFlowbite } from "flowbite";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import { FaSquareFacebook } from "react-icons/fa6";
+import { MdOutlineAlternateEmail } from "react-icons/md";
 
 const Navbar = () => {
     useEffect(() => {
         initFlowbite();
-      }, []);
+    }, []);
     return (
         <div className="font-roboto">
             <nav className="bg-white border-gray-200 md:shadow-md md:h-20 items-center dark:bg-gray-900 dark:border-gray-700">
@@ -80,18 +84,46 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link  className="flex gap-1 text-base items-center">
+                                <Link className="flex gap-1 text-base items-center">
                                     <IoSearchOutline className="text-2xl"></IoSearchOutline>
                                     Search
                                 </Link>
                             </li>
                             <li>
-                                <button className="border px-4 py-1 rounded-sm ">
+                                <button className="border px-4 py-1 rounded-sm " id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbarr">
                                     <Link className="flex gap-1 text-base items-center">
                                         <FaUserCircle className="text-2xl"></FaUserCircle>
                                         Sign in
                                     </Link>
                                 </button>
+                                <div id="dropdownNavbarr" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                                <FcGoogle className="text-2xl"></FcGoogle>
+                                                Google
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                                <FaGithub className="text-2xl"></FaGithub>
+                                                GitHub
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                                <FaSquareFacebook className="text-2xl"></FaSquareFacebook>
+                                                Facebook
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                                <MdOutlineAlternateEmail className="text-2xl"></MdOutlineAlternateEmail>
+                                                Email
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>
