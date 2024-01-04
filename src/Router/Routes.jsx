@@ -3,6 +3,8 @@ import Main from '../Layouts/Main';
 import Home from '../Pages/Home/Home';
 import Questions from '../Pages/Questions/Questions';
 import Explore from '../Pages/Explore/Explore';
+import Popular from '../Pages/Explore/Popular/Popular';
+import Upcoming from '../Pages/Explore/Upcoming/Upcoming';
 
 const Routes = createBrowserRouter(
 [
@@ -20,7 +22,18 @@ const Routes = createBrowserRouter(
             },
             {
                 path:'/explore',
-                element:<Explore></Explore>
+                element:<Explore></Explore>,
+                children:[
+                    {
+                        path:'/explore/popular',
+                        element:<Popular></Popular>
+                    },
+                    {
+                        path:'/explore/up-coming',
+                        element:<Upcoming></Upcoming>
+                    },
+
+                ]
             }
         ]
     }

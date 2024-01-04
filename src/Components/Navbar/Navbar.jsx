@@ -99,25 +99,25 @@ const Navbar = () => {
                                 <div id="dropdownNavbarr" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                         <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                                 <FcGoogle className="text-2xl"></FcGoogle>
                                                 Google
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                                 <FaGithub className="text-2xl"></FaGithub>
                                                 GitHub
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                                 <FaSquareFacebook className="text-2xl"></FaSquareFacebook>
                                                 Facebook
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center">
+                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                                 <MdOutlineAlternateEmail className="text-2xl"></MdOutlineAlternateEmail>
                                                 Email
                                             </Link>
