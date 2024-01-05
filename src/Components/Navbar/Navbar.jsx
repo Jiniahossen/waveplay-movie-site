@@ -12,6 +12,7 @@ import { initFlowbite } from "flowbite";
 import IconLogin from "../IconeLogin/IconLogin";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import Search from "../Search/Search";
 
 const Navbar = () => {
     const { user, signout } = useAuth();
@@ -93,7 +94,7 @@ const Navbar = () => {
                             <li>
                                 <Link className="flex gap-1 text-base items-center">
                                     <IoSearchOutline className="text-2xl"></IoSearchOutline>
-                                    Search
+                                    <Search></Search>
                                 </Link>
                             </li>
                             {
