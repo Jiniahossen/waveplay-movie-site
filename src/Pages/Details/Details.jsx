@@ -16,7 +16,7 @@ const Details = () => {
             </div>
 
             {/* Details Section */}
-            <div className="flex items-end max-w-5xl justify-between mx-auto gap-10 font-roboto absolute -bottom-52 left-0 right-0 p-8">
+            <div className="flex md:flex-row items-end max-w-5xl justify-between mx-auto gap-10 font-roboto absolute -bottom-52 left-0 right-0 p-8">
                 <div className="w-1/3">
                     <img
                         className="h-[550px] rounded-lg shadow-gray-700 shadow-xl border"
@@ -49,7 +49,7 @@ const Details = () => {
                             </button>
                         ))}
                     </div>
-                    <h1 className="text-xl text-black font-semibold font-roboto mt-6 mb-2">Synopsis</h1>
+                    <h1 className="text-xl  md:text-white lg:text-black font-semibold font-roboto mt-6 mb-2">Synopsis</h1>
                     <p className="text-base text-black">{data?.overview}</p>
                 </div>
             </div>

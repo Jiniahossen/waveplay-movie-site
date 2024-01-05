@@ -1,5 +1,4 @@
 // import logo from '../../assets/2564674-removebg-preview1.png'
-
 import { Link } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 import { RiPaintFill } from "react-icons/ri";
@@ -10,12 +9,20 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
 import { useEffect } from "react";
 import { initFlowbite } from "flowbite";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { MdOutlineAlternateEmail } from "react-icons/md";
+import IconLogin from "../IconeLogin/IconLogin";
+import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+    const { user, signout } = useAuth();
+
+    const handleLogOut = () => {
+        signout()
+            .then(res => {
+                Swal.fire("You have logged out!");
+            })
+    }
+
     useEffect(() => {
         initFlowbite();
     }, []);
@@ -89,42 +96,36 @@ const Navbar = () => {
                                     Search
                                 </Link>
                             </li>
-                            <li>
-                                <button className="border px-4 py-1 rounded-sm " id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbarr">
-                                    <Link className="flex gap-1 text-base items-center">
-                                        <FaUserCircle className="text-2xl"></FaUserCircle>
-                                        Sign in
-                                    </Link>
-                                </button>
-                                <div id="dropdownNavbarr" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                        <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                <FcGoogle className="text-2xl"></FcGoogle>
-                                                Google
+                            {
+
+                                user ? <><li>
+                                    <button className="border rounded-full " id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbarrr">
+                                        <img className="rounded-full h-8" src={user?.photoURL} alt="" />
+                                    </button>
+                                    <div id="dropdownNavbarrr" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                        <ul className="py-2 px-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                                            <li className="">
+                                                <Link onClick={handleLogOut} className="flex gap-1 text-base items-center  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                    SignOut
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+                                </> : <>
+                                    <li>
+                                        <button className="border px-4 py-1 rounded-sm " id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbarr">
+                                            <Link className="flex gap-1 text-base items-center">
+                                                <FaUserCircle className="text-2xl"></FaUserCircle>
+                                                Sign in
                                             </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                <FaGithub className="text-2xl"></FaGithub>
-                                                GitHub
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                <FaSquareFacebook className="text-2xl"></FaSquareFacebook>
-                                                Facebook
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                <MdOutlineAlternateEmail className="text-2xl"></MdOutlineAlternateEmail>
-                                                Email
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                                        </button>
+                                        <div id="dropdownNavbarr" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                            <IconLogin></IconLogin>
+                                        </div>
+                                    </li></>
+                            }
                         </ul>
                     </div>
                 </div>

@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./home.css"
 import { FaStar } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
     const [ popularMovies, setPopularMovies ] = useState([])
-
     useEffect(() => {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US")
         .then(res => res.json())
@@ -17,6 +17,9 @@ const Home = () => {
 
     return (
         <>
+        <Helmet>
+            <title>Waveplay | Asian Dramas & Movies</title>
+        </Helmet>
             <div className="poster">
                 <Carousel
                     showThumbs={false}
@@ -27,7 +30,7 @@ const Home = () => {
                 >
                     {
                         popularMovies.map(movie => (
-                            <Link style={{textDecoration:"none",color:"white"}} to={`/detail/${movie.id}`} key={movie?.id} className="font-roboto" >
+                            <Link style={{textDecoration:"none",color:"white"}} to={`/details/${movie.id}`} key={movie?.id} className="font-roboto" >
                                 <div className="posterImage">
                                     <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} />
                                 </div>
