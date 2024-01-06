@@ -51,7 +51,7 @@ const IconLogin = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <Link to={'/login'} className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                                 <MdOutlineAlternateEmail className="text-2xl text-red-700"></MdOutlineAlternateEmail>
                                                 Email
                                             </Link>

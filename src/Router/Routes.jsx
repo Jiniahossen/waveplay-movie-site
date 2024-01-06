@@ -7,6 +7,7 @@ import Popular from '../Pages/Explore/Popular/Popular';
 import Upcoming from '../Pages/Explore/Upcoming/Upcoming';
 import Toprated from '../Pages/Explore/TopRated/Toprated';
 import Details from '../Pages/Details/Details';
+// import Login from '../Pages/Login/Login';
 
 const Routes = createBrowserRouter(
 [
@@ -22,6 +23,7 @@ const Routes = createBrowserRouter(
                 path:'/faq',
                 element:<Questions></Questions>
             },
+            
             {
                 path:'/explore',
                 element:<Explore></Explore>,
@@ -47,7 +49,8 @@ const Routes = createBrowserRouter(
                 loader:({params})=>fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
             }
         ]
-    }
+    },
+    
 ]
 )
 

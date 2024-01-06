@@ -1,56 +1,134 @@
-import { FaStar } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { FaRegHeart } from "react-icons/fa6";
+import { FaCircleExclamation } from "react-icons/fa6";
+import { FaCloudDownloadAlt } from "react-icons/fa";
+import { PiShareNetworkFill } from "react-icons/pi";
+import { useEffect } from "react";
+import { initFlowbite } from "flowbite";
 
 const Details = () => {
-    const data = useLoaderData();
-
+    useEffect(() => {
+        initFlowbite();
+    }, []);
     return (
-        <div className="max-w-7xl mx-auto relative">
-            {/* Backdrop image */}
-            <div className="relative w-full">
-                <img
-                    className="h-[500px] w-full bg-opacity-40 bg-black"
-                    src={`https://image.tmdb.org/t/p/original/${data?.backdrop_path}`}
-                    alt=""
-                />
+        <div className="h-full flex">
+            <div className="w-2/3 h-full">
+                <iframe
+                    className="h-[90vh] w-full "
+                    src="https://www.youtube.com/embed/YBVI6yzLxkg"
+                    title="YouTube Video"
+                    frameBorder="0"
+                    allowFullScreen
+                ></iframe>
             </div>
-
-            {/* Details Section */}
-            <div className="flex md:flex-row items-end max-w-5xl justify-between mx-auto gap-10 font-roboto absolute -bottom-52 left-0 right-0 p-8">
-                <div className="w-1/3">
-                    <img
-                        className="h-[550px] rounded-lg shadow-gray-700 shadow-xl border"
-                        src={`https://image.tmdb.org/t/p/original/${data?.poster_path}`}
-                        alt=""
-                    />
-                </div>
-
-                <div className="w-2/3 text-white">
-                    <h1 className="text-4xl font-roboto font-medium">{data?.title}</h1>
-                    <h1 className="text-sm mt-2 font-roboto">{data?.tagline}</h1>
-                    <div className="flex items-center gap-6 mt-4">
-                        <span className="flex items-center gap-2">
-                            <FaStar className="text-yellow-300 text-2xl"></FaStar>
-                            <h1 className="text-xl">{data ? data.vote_average : ""}</h1>
-                        </span>
+            <div className="w-1/3 font-roboto">
+                <div className="ps-6">
+                    {/* Title */}
+                    <h1 className="text-3xl">Mr.Been</h1>
+                    {/* Dates */}
+                    <h1 className="text-sm">October 24, 2002</h1>
+                    {/* Tags */}
+                    <div className="flex gap-4 mt-3 text-sm">
+                        <h1>American</h1>
+                        <h1>Cartoon</h1>
+                        <h1>Comedy</h1>
+                    </div>
+                    {/* Link icons */}
+                    <div className="mt-6 flex gap-6 justify-around items-center">
                         <div>
-                            <h1 className="text-sm">({data.vote_count} Votes)</h1>
+                            <button className="flex-col items-center justify-center">
+                                <span className="flex-col items-center justify-center text-center">
+                                    <FaRegHeart className="text-2xl mb-1 ml-4" />
+                                    <h1 className="text-sm">Favorite</h1>
+                                </span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className="flex-col items-center justify-center">
+                                <span className="flex-col items-center justify-center text-center">
+                                    <PiShareNetworkFill className="text-2xl mb-1 ml-4" />
+                                    <h1 className="text-sm">Share</h1>
+                                </span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className="flex-col items-center justify-center">
+                                <span className="flex-col items-center justify-center text-center">
+                                    <FaCloudDownloadAlt className="text-2xl mb-1  ml-4" />
+                                    <h1 className="text-sm">Download</h1>
+                                </span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className="flex-col items-center justify-center">
+                                <span className="flex-col items-center justify-center text-center">
+                                    <FaCircleExclamation className="text-2xl mb-1 ml-4" />
+                                    <h1 className="text-sm">Report</h1>
+                                </span>
+                            </button>
+                        </div>
+
+
+                    </div>
+                    {/* Description */}
+                    <div className="mt-6">
+                        <h1 className="text-xs mb-4">Pop ads only have frequency of 1 pop per 1 hour.</h1>
+
+                        <div id="accordion-collapse" className="shadow-md rounded-md" data-accordion="collapse">
+                            <h2 id="accordion-collapse-heading-1">
+                                <button type="button" className="flex font-roboto text-sm items-center justify-between w-full p-3 font-medium rtl:text-right text-black border shadow-t-md border-gray-200 rounded-t-md focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="" aria-controls="accordion-collapse-body-1">
+                                    <span>Description</span>
+                                    <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5 5 1 1 5" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="accordion-collapse-body-1" className="hidden" aria-labelledby="accordion-collapse-heading-1">
+                                <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                                    <p className="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                                    <p className="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" className="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h1 className="mt-2">{data?.runtime} mins</h1>
-                    <h1>Release time: {data?.release_date}</h1>
-                    <div className="flex gap-4 items-center mt-3">
-                        {data?.genres?.map((genre) => (
-                            <button
-                                className="text-sm font-roboto px-3 border py-1 rounded-3xl bg-pink-600 text-white"
-                                key={genre.id}
-                            >
-                                {genre?.name}
+                    {/* Episodes */}
+                    <div className="mt-6">
+                        <h1 className="text-lg font-medium">Episodes</h1>
+                        <h1 className="text-sm">Total 13</h1>
+                        <div className="mt-4 flex gap-4 flex-wrap">
+                            <button className="px-6 py-1 rounded-sm bg-gray-600 text-white">
+                                1
                             </button>
-                        ))}
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                2
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                3
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                4
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                5
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                6
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                7
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                8
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                9
+                            </button>
+                            <button className="px-6 py-1 rounded-sm cursor-pointer bg-gray-600 text-white">
+                                10
+                            </button>
+                        </div>
                     </div>
-                    <h1 className="text-xl  md:text-white lg:text-black font-semibold font-roboto mt-6 mb-2">Synopsis</h1>
-                    <p className="text-base text-black">{data?.overview}</p>
+
+
                 </div>
             </div>
         </div>

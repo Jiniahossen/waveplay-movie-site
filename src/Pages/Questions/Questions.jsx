@@ -12,7 +12,6 @@ const Questions = () => {
             <h1 className="text-2xl mb-10 text-center">
                 Frequently Asked Questions
             </h1>
-
             <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-pink-600 dark:text-white">
                 <h2 id="accordion-color-heading-1">
                     <button type="button" className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-black border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-pink-600 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="false" aria-controls="accordion-color-body-1">
@@ -64,7 +63,7 @@ const Questions = () => {
                 <button className="bg-blue-500 px-4 py-2 rounded-md border">
                     <span className="flex gap-2 items-center">
                         <FaFacebookF className="text-white text-xl"></FaFacebookF>
-                        <h1 className="text-white text-lg"> Find us on Google</h1>
+                        <h1 className="text-white text-lg"> Find us on Facebook</h1>
                     </span>
                 </button>
             </div>
