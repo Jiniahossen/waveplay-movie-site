@@ -92,10 +92,12 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link className="flex gap-1 text-base items-center">
-                                    <IoSearchOutline className="text-2xl"></IoSearchOutline>
-                                    <Search></Search>
-                                </Link>
+                                
+                                    <div className="flex gap-1 text-base items-center">
+                                        <IoSearchOutline className="text-2xl"></IoSearchOutline>
+                                        <Search></Search>
+                                    </div>
+                               
                             </li>
                             {
 

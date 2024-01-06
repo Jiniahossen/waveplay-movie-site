@@ -28,8 +28,8 @@ const Watching = () => {
     }, [])
     
     return (
-        <div className='mt-10 max-w-7xl mx-auto'>
-            <h1 className='text-2xl font-roboto mb-6 font-medium'>Continue Watching</h1>
+        <div className='mt-10 max-w-7xl mx-auto '>
+            <h1 className='text-2xl font-roboto mb-4 font-medium'>Continue Watching</h1>
              <>
       <Swiper
         slidesPerView={4}

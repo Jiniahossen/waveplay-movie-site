@@ -21,19 +21,19 @@ const Details = () => {
                 ></iframe>
             </div>
             <div className="w-1/3 font-roboto">
-                <div className="ps-6">
+                <div className="ps-6 pt-6">
                     {/* Title */}
                     <h1 className="text-3xl">Mr.Been</h1>
                     {/* Dates */}
                     <h1 className="text-sm">October 24, 2002</h1>
                     {/* Tags */}
-                    <div className="flex gap-4 mt-3 text-sm">
+                    <div className="flex gap-4 mt-6 text-sm">
                         <h1>American</h1>
                         <h1>Cartoon</h1>
                         <h1>Comedy</h1>
                     </div>
                     {/* Link icons */}
-                    <div className="mt-6 flex gap-6 justify-around items-center">
+                    <div className="mt-14 flex gap-6 justify-around items-center">
                         <div>
                             <button className="flex-col items-center justify-center">
                                 <span className="flex-col items-center justify-center text-center">
@@ -70,7 +70,7 @@ const Details = () => {
 
                     </div>
                     {/* Description */}
-                    <div className="mt-6">
+                    <div className="mt-14">
                         <h1 className="text-xs mb-4">Pop ads only have frequency of 1 pop per 1 hour.</h1>
 
                         <div id="accordion-collapse" className="shadow-md rounded-md" data-accordion="collapse">
@@ -91,7 +91,7 @@ const Details = () => {
                         </div>
                     </div>
                     {/* Episodes */}
-                    <div className="mt-6">
+                    <div className="mt-20">
                         <h1 className="text-lg font-medium">Episodes</h1>
                         <h1 className="text-sm">Total 13</h1>
                         <div className="mt-4 flex gap-4 flex-wrap">

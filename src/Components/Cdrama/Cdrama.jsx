@@ -28,8 +28,8 @@ const Cdrama = () => {
     }, [])
     
     return (
-        <div className='mt-10 max-w-7xl mx-auto'>
-            <button className='p-2 rounded-md bg-none mb-6 hover:bg-[#767676] hover:text-white'>
+        <div className='mt-10 max-w-7xl mx-auto ove'>
+            <button className='p-2 rounded-md bg-none mb-4 hover:bg-[#767676] hover:text-white'>
                 <div className="flex gap-2 items-center">
                     <h1 className='text-xl items-center font-roboto font-medium'>Top Cdrama</h1>
                     <IoIosArrowForward className="text-2xl"></IoIosArrowForward>
