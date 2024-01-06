@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import '../Watching/Watching.css'
+import '../Watching/Watching.css';
 
 // import required modules
 import { Pagination, Navigation, Mousewheel, Keyboard } from 'swiper/modules';

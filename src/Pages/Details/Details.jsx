@@ -10,8 +10,9 @@ const Details = () => {
         initFlowbite();
     }, []);
     return (
-        <div className="h-full flex">
-            <div className="w-2/3 h-full">
+        <div className="h-full flex flex-col lg:flex-row ">
+            {/* video */}
+            <div className="w-full lg:w-2/3 h-full">
                 <iframe
                     className="h-[90vh] w-full "
                     src="https://www.youtube.com/embed/YBVI6yzLxkg"
@@ -20,8 +21,9 @@ const Details = () => {
                     allowFullScreen
                 ></iframe>
             </div>
-            <div className="w-1/3 font-roboto">
-                <div className="ps-6 pt-6">
+            {/* details */}
+            <div className="w-full lg:w-1/3 font-roboto">
+                <div className="md:ps-2 lg:ps-6 pt-6">
                     {/* Title */}
                     <h1 className="text-3xl">Mr.Been</h1>
                     {/* Dates */}
@@ -33,7 +35,7 @@ const Details = () => {
                         <h1>Comedy</h1>
                     </div>
                     {/* Link icons */}
-                    <div className="mt-14 flex gap-6 justify-around items-center">
+                    <div className="mt-6 md:mt-14 flex gap-6 justify-around items-center">
                         <div>
                             <button className="flex-col items-center justify-center">
                                 <span className="flex-col items-center justify-center text-center">
@@ -70,7 +72,7 @@ const Details = () => {
 
                     </div>
                     {/* Description */}
-                    <div className="mt-14">
+                    <div className="mt-6 md:mt-14">
                         <h1 className="text-xs mb-4">Pop ads only have frequency of 1 pop per 1 hour.</h1>
 
                         <div id="accordion-collapse" className="shadow-md rounded-md" data-accordion="collapse">
@@ -91,7 +93,7 @@ const Details = () => {
                         </div>
                     </div>
                     {/* Episodes */}
-                    <div className="mt-20">
+                    <div className="mt-6 mb-10 lg:mb-0 md:mt-20">
                         <h1 className="text-lg font-medium">Episodes</h1>
                         <h1 className="text-sm">Total 13</h1>
                         <div className="mt-4 flex gap-4 flex-wrap">
