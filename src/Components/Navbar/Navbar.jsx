@@ -1,8 +1,7 @@
-// import logo from '../../assets/2564674-removebg-preview1.png'
+
 import { Link } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 import { RiPaintFill } from "react-icons/ri";
-import { MdOutlineChat } from "react-icons/md";
 import { PiVideoLight } from "react-icons/pi";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
@@ -13,6 +12,7 @@ import IconLogin from "../IconeLogin/IconLogin";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import Search from "../Search/Search";
+import RequestDrama from "../RequestDrama/RequestDrama";
 
 const Navbar = () => {
     const { user, signout } = useAuth();
@@ -56,10 +56,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <button className="flex gap-1 text-base items-center">
-                                    <MdOutlineChat className="text-2xl"></MdOutlineChat>
-                                    Request Drama
-                                </button>
+                                <RequestDrama></RequestDrama>
                             </li>
                             <li>
                                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex gap-1 text-base items-center">
@@ -92,12 +89,12 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                
-                                    <div className="flex gap-1 text-base items-center">
-                                        <IoSearchOutline className="text-2xl"></IoSearchOutline>
-                                        <Search></Search>
-                                    </div>
-                               
+
+                                <div className="flex gap-1 text-base items-center">
+                                    <IoSearchOutline className="text-2xl"></IoSearchOutline>
+                                    <Search></Search>
+                                </div>
+
                             </li>
                             {
 
@@ -118,10 +115,12 @@ const Navbar = () => {
                                 </> : <>
                                     <li>
                                         <button className="border px-4 py-1 rounded-sm " id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbarr">
-                                            <Link className="flex gap-1 text-base items-center">
+
+                                            <div className="flex gap-1 text-base items-center">
                                                 <FaUserCircle className="text-2xl"></FaUserCircle>
                                                 Sign in
-                                            </Link>
+                                            </div>
+
                                         </button>
                                         <div id="dropdownNavbarr" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                             <IconLogin></IconLogin>

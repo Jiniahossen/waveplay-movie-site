@@ -33,22 +33,25 @@ const IconLogin = () => {
         <div>
             <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                         <li>
-                                            <Link onClick={()=>handleGoogleSignin(googleSignin)} className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                <FcGoogle className="text-2xl"></FcGoogle>
+                                            <button  onClick={()=>handleGoogleSignin(googleSignin)}  className="flex w-full py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <FcGoogle className="text-2xl"></FcGoogle>
                                                 Google
-                                            </Link>
+                                            </button>
                                         </li>
                                         <li>
-                                            <Link onClick={()=>handleGoogleSignin(githubSignIn)} className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                <FaGithub className="text-2xl"></FaGithub>
+                                           
+                                            <button onClick={()=>handleGoogleSignin(githubSignIn)}  className="flex w-full py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <FaGithub className="text-2xl"></FaGithub>
                                                 GitHub
-                                            </Link>
+                                            </button>
                                         </li>
                                         <li>
-                                            <Link className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                <FaSquareFacebook className="text-2xl text-blue-500"></FaSquareFacebook>
+                                            <button className="flex w-full py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <FaSquareFacebook className="text-2xl text-blue-500"></FaSquareFacebook>
                                                 Facebook
-                                            </Link>
+                                            </button>
+                                               
+                                            
                                         </li>
                                         <li>
                                             <Link to={'/login'} className="flex py-2 pl-2 gap-1 text-base items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
