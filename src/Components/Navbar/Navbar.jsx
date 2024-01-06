@@ -56,17 +56,17 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to={'/'} className="flex gap-1 text-base items-center">
+                                <button className="flex gap-1 text-base items-center">
                                     <MdOutlineChat className="text-2xl"></MdOutlineChat>
                                     Request Drama
-                                </Link>
+                                </button>
                             </li>
                             <li>
-                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="">
-                                    <Link to={'/'} className="flex gap-1 text-base items-center">
-                                        <RiPaintFill className="text-2xl"></RiPaintFill>
-                                        Theme
-                                    </Link>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex gap-1 text-base items-center">
+
+                                    <RiPaintFill className="text-2xl"></RiPaintFill>
+                                    Theme
+
                                 </button>
                                 <div id="dropdownNavbar" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
@@ -112,7 +112,6 @@ const Navbar = () => {
                                             </li>
                                         </ul>
                                     </div>
-
                                 </li>
                                 </> : <>
                                     <li>

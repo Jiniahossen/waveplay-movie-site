@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import "./home.css"
 import { FaStar } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import Watching from "../../Components/Watching/Watching";
+import LatestUpdate from '../../Components/LatestUpdate/LatestUpdate'
+import Kdrama from "../../Components/Kdrama/Kdrama";
+import Cdrama from "../../Components/Cdrama/Cdrama";
 
 
 const Home = () => {
@@ -49,6 +53,18 @@ const Home = () => {
                     }
                 </Carousel>
                 
+            </div>
+            <div>
+                <Watching></Watching>
+            </div>
+            <div>
+                <LatestUpdate></LatestUpdate>
+            </div>
+            <div>
+                <Kdrama></Kdrama>
+            </div>
+            <div>
+                <Cdrama></Cdrama>
             </div>
         </>
     )
