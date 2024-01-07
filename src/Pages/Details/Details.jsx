@@ -19,13 +19,12 @@ const Details = () => {
 
     // Function to handle episode button click
     const handleEpisodeClick = (index) => {
-        console.log(index);
         setSelectedEpisodeIndex(index);
         setPlayerKey(playerKey + 1);
 
     };
 
-
+    console.log(filterData.episodes[selectedEpisodeIndex]);
     //flowbite
     useEffect(() => {
         initFlowbite();

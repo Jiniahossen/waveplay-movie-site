@@ -9,24 +9,12 @@ import '../Watching/Watching.css';
 
 // import required modules
 import { Pagination, Navigation, Mousewheel, Keyboard } from 'swiper/modules';
-import { useEffect, useState } from 'react';
 import Movies from '../Movies/Movies';
 import { IoIosArrowForward } from 'react-icons/io';
+import useAllDramas from '../../hooks/useAllDramas';
 
 const LatestUpdate = () => {
-    const [movie, setMovie] = useState([]);
-
-    useEffect(() => {
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US')
-            .then((res) => res.json())
-            .then((data) => {
-
-                setMovie(data.results);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-    }, [])
+    const [dramas] = useAllDramas()
 
     return (
         <div className='mt-6 max-w-7xl mx-auto '>
@@ -48,8 +36,8 @@ const LatestUpdate = () => {
                 >
 
                     {
-                        movie?.map(movie =>
-                            <SwiperSlide key={movie.id}><Movies movie={movie} > </Movies> </SwiperSlide>)
+                        dramas?.map(movie =>
+                            <SwiperSlide key={movie._id}><Movies movie={movie} > </Movies> </SwiperSlide>)
                     }
 
 
