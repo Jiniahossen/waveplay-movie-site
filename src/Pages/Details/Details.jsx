@@ -5,13 +5,27 @@ import { PiShareNetworkFill } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import { initFlowbite } from "flowbite";
 import { useLoaderData, useParams } from "react-router-dom";
+import ReactPlayer from "react-player";
 
 const Details = () => {
     const { id } = useParams();
     const data = useLoaderData();
     const filterData = data.find(data => data._id === id);
 
-    
+    // State to track selected episode index
+    const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState(0);
+    // State to force re-render of ReactPlayer by changing key
+    const [playerKey, setPlayerKey] = useState(0);
+
+    // Function to handle episode button click
+    const handleEpisodeClick = (index) => {
+        console.log(index);
+        setSelectedEpisodeIndex(index);
+        setPlayerKey(playerKey + 1);
+
+    };
+
+
     //flowbite
     useEffect(() => {
         initFlowbite();
@@ -20,13 +34,14 @@ const Details = () => {
         <div className="h-full flex flex-col lg:flex-row ">
             {/* video */}
             <div className="w-full lg:w-2/3 h-full">
-                <iframe
-                    className="h-[90vh] w-full "
-                    src={filterData.episodes[]}
-                    title="YouTube Video"
-                    frameBorder="0"
-                    allowFullScreen
-                ></iframe>
+                <ReactPlayer
+                    key={playerKey}
+                    url={filterData.episodes[selectedEpisodeIndex]}
+                    width="100%"
+                    height="90vh"
+                    controls={true}
+                    reset={true}
+                />
             </div>
             {/* details */}
             <div className="w-full lg:w-1/3 font-roboto">
@@ -36,10 +51,10 @@ const Details = () => {
                     {/* Dates */}
                     <h1 className="text-sm">{filterData.release_date}</h1>
                     {/* Tags */}
-                    <div className="flex gap-4 mt-6 text-sm">
+                    <div className="flex gap-4 mt-4 text-sm">
                         {filterData.tags &&
                             filterData.tags.map((tag, index) => (
-                                <span key={index} className="p-2 rounded-md">
+                                <span key={index} className=" rounded-md">
                                     {tag}
                                 </span>
                             ))}
@@ -104,22 +119,27 @@ const Details = () => {
                         </div>
                     </div>
                     {/* Episodes */}
+
                     <div className="mt-6 mb-10 lg:mb-0 md:mt-20">
                         <h1 className="text-lg font-medium">Episodes</h1>
                         <h1 className="text-sm">Total {filterData.episodes?.length}</h1>
-                        <div className="mt-4 flex gap-4 flex-wrap">
+                        <div className="mt-4 flex gap-4 justify-around flex-wrap">
                             {filterData.episodes &&
                                 filterData.episodes.map((episode, index) => (
                                     <button
-                                    
                                         key={index}
-                                        className="px-6 py-1 rounded-sm bg-gray-600 text-white"
+                                        className={`px-4 py-2 rounded-md border ${selectedEpisodeIndex === index
+                                            ? "border-pink-600 bg-pink-600 text-white"
+                                            : "border-gray-300 bg-gray-100 text-gray-700 hover:border-pink-400 hover:bg-blue-100 hover:text-pink-600"
+                                            }`}
+                                        onClick={() => handleEpisodeClick(index)}
                                     >
-                                        {index+1}
+                                        {index + 1}
                                     </button>
                                 ))}
                         </div>
                     </div>
+
 
 
 
