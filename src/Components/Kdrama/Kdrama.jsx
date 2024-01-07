@@ -29,7 +29,7 @@ const Kdrama = () => {
     }, [])
     
     return (
-        <div className='mt-10 max-w-7xl mx-auto '>
+        <div className='mt-6 max-w-7xl mx-auto '>
             <button className='p-2 rounded-md bg-none mb-4 hover:bg-[#767676] hover:text-white'>
                 <div className="flex gap-2 items-center">
                     <h1 className='text-xl items-center font-roboto font-medium'>Top Kdrama</h1>
