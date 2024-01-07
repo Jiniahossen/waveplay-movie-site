@@ -46,7 +46,7 @@ const Routes = createBrowserRouter(
             {
                 path:'/details/:id',
                 element:<Details></Details>,
-                loader:({params})=>fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
+                loader:()=>fetch(`http://localhost:5000/dramas`)
             }
         ]
     },

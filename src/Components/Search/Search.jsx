@@ -3,7 +3,6 @@ import PopularSearch from "../PopularSearch/PopularSearch";
 const Search = () => {
     return (
         <div className=" font-roboto">
-
             <button data-modal-target="static-modal" data-modal-toggle="static-modal" className="block" type="button">
                 Search
             </button>
